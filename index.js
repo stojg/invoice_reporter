@@ -1,4 +1,4 @@
-const parser = require('./main.js')
+const parser = require('./parser.js')
 const readline = require('readline');
 const fs = require('fs');
 
@@ -64,7 +64,7 @@ readInterface.on('line', function (line) {
     console.log(line.padEnd(80, " ") + colours.fg.green + '(' + round(parsed[0]) + ')' + colours.fg.white)
 });
 
-
+// tax brackets
 const t14 = 14000
 const t48 = 48000
 const t70 = 70000

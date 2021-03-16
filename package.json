@@ -1,0 +1,23 @@
+{
+  "name": "time_reporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js report.txt",
+    "build": "pegjs parser.pegjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stojg/time_reporter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stojg/time_reporter/issues"
+  },
+  "homepage": "https://github.com/stojg/time_reporter#readme",
+  "devDependencies": {
+    "pegjs": "^0.10.0"
+  }
+}
