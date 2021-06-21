@@ -2,6 +2,9 @@ const parser = require('./parser.js')
 const readline = require('readline');
 const fs = require('fs');
 
+// example rate, replace with yours
+const RATE = 50
+
 const colours = {
     reset: "\x1b[0m",
     bright: "\x1b[1m",
@@ -58,9 +61,7 @@ readInterface.on('line', function (line) {
     if (!summary.hasOwnProperty(parsed[1])) {
         summary[parsed[1]] = 0.0
     }
-
     summary[parsed[1]] += parsed[0]
-
     console.log(line.padEnd(80, " ") + colours.fg.green + '(' + round(parsed[0]) + ')' + colours.fg.white)
 });
 
@@ -87,7 +88,8 @@ readInterface.on('close', function () {
         console.log(`${property}: ${colours.fg.green + round(summary[property]) + colours.fg.white} hours`);
     }
 
-    const subtotal = total*80
+    // real shoddy estimation of taxes etc
+    const subtotal = total*RATE
     const gst = subtotal * 0.15
     const fee = subtotal * 0.01
     const effectiveIncomeTax = subtotal * effectiveTax(subtotal * 52/2)
